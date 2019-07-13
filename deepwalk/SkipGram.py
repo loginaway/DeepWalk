@@ -57,7 +57,33 @@ class SkipGram(object):
         loss=-np.sum([d[i]*np.log(self.sigmoid(np.vdot(Phi[i], self.Theta[vi_index])))\
                 +(1-d[i])*np.log(1-self.sigmoid(np.vdot(Phi[i], self.Theta[vi_index])))\
                     for i in range(len(d))])
+        # loss=np.sum([np.log(1+np.exp(-np.vdot(Phi[i], self.Theta[vi_index]))) for i in range(len(d))])
         return loss
+
+    def testloss(self, sampling_size=100):
+        '''
+        Using sampling to estimate the loss of the whole model.
+        '''
+        group=[None, None]
+        group[0]=np.random.choice(range(self.whole_size), sampling_size)
+        tmp=set(range(self.whole_size))
+        tmp=tmp.difference(set(group[0]))
+        group[1]=np.random.choice(list(tmp), sampling_size)
+        return sum([self.lossfunc(i, j) for i, j in zip(group[0], group[1])])/sampling_size
+
+    def testRMSE(self, a, b):
+        tmp=self.Theta[a]-self.Theta[b]
+        return np.sqrt(np.vdot(tmp, tmp))
+
+    def testprob(self, vi_index):
+        prob=np.empty(self.whole_size)
+        for ui_index in range(self.whole_size):
+            _, Phi=self.get_Nodes_and_Phis(ui_index)
+            seq=self.tree.index2Bin(ui_index)
+            d=np.fromiter(seq, dtype=float)
+            prob[ui_index]=np.exp(np.sum([np.log(self.sigmoid(-np.vdot(Phi[i], self.Theta[vi_index]))) \
+                for i in range(len(d))]))
+        return prob
 
     def fracfunc(self, ui_index, vi_index, Phi):
         '''
@@ -123,7 +149,7 @@ class SkipGram(object):
         w=self.window_size
         unit_size=2*w+1
         for i in range(len(walk)-unit_size+1):
-            print('walk', '[', i, ':', i+unit_size, ']')
+            # print('walk', '[', i, ':', i+unit_size, ']')
             self.unit_train(walk[i: i+unit_size], unit_iter, showLoss=showLoss)
     
 
