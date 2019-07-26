@@ -1,4 +1,4 @@
-# DeepWalk-SkipGram-HierarchicalSoftmax-Python-Numpy
+# DeepWalk-SkipGram-HierarchicalSoftmax
 
 An implementation of DeepWalk and SkipGram models. 
 
