@@ -52,7 +52,8 @@ deepwalk(unit_iter=100, multiProcess=1, showLoss=True)
 deepwalk.save()
 ```
 
-
+## References
+\[1\] Bryan Perozzi, Rami AI-Rfou, Steven, Skiena, DeepWalk- Online Learning of Social Representations, 2014.
 
 ## About me
 
