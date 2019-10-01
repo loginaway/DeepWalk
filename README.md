@@ -2,7 +2,7 @@
 
 An implementation of DeepWalk and SkipGram models. 
 
-Created from scratch, where Hierarchical Softmax is implemented through building a binary tree (See file: BinaryTree.py). 
+Hierarchical Softmax is implemented through building a binary tree (See file: BinaryTree.py). 
 
 
 
