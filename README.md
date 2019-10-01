@@ -7,7 +7,7 @@ Created from scratch, where Hierarchical Softmax is implemented through building
 
 
 ## Dependencies
-The packages used in this implementation is **pymysql, numpy and dgl**.
+The packages used in this implementation is **pymysql, numpy and dgl**.  
 Please install the dependencies by running `pip3 install -r requirements.txt`.
 
 ## Skip-Gram
