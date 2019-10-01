@@ -1,8 +1,6 @@
 # coding: utf-8
 
 from dgl import DGLGraph
-from matplotlib import pyplot as plt
-import networkx as nx
 import numpy as np
 import re
 
@@ -53,9 +51,4 @@ if __name__=='__main__':
     G=gtools.fromText('p2p-Gnutella08.txt')
     print(G)
     nodes=G.nodes().numpy()
-    
-    # print(G.ndata['T']=np.random.rand(10,10))
-    print(len(G.nodes))
-    # nx.draw(G.to_networkx())
-    # plt.show()
-    
+    print(len(G.nodes))  

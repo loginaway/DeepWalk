@@ -11,6 +11,7 @@ class data2graph(object):
         conn=pymysql.connect(user=user, password=passwd, db=db, autocommit=autocommit)
         with conn.cursor() as cur:
             # 获取电影在数据库中id和豆瓣id的对应信息
+            # Retrieve the corresponding information of movies in the database and in Douban
             num=cur.execute(r'''
                 select name, following_id, user_id from {}
                 '''.format(user_table_name))

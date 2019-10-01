@@ -3,7 +3,7 @@ import numpy as np
 
 class Node(object):
     '''
-    树结点
+    Tree node.
     '''
     def __init__(self, embedding_size):
         self.left=None
