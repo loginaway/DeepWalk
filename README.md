@@ -55,6 +55,6 @@ deepwalk.save()
 
 ## About me
 
-Hi there, I am currently an undergraduate at Fudan University, majoring in Data Science. If you have any question, create an issue and feel free to contact me by 
+Hi there, I am currently an undergraduate at Fudan University, majoring in Data Science. If you have any question, please file an issue or contact me by 
 
 loginaway@gmail.com
