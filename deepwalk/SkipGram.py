@@ -157,7 +157,9 @@ class SkipGram(object):
 
 if __name__=='__main__':
     window_size = 2
-    skipgram=SkipGram(window_size, 30, 10, 0.001)
+    embedding_size = 10
+    whole_size = 100000
+    skipgram=SkipGram(window_size, embedding_size, 100000, 0.001)
     print(skipgram.get_Nodes_and_Phis(2))
     print(skipgram.tree.index2Bin(2))
     _, Phi=skipgram.get_Nodes_and_Phis(2)
